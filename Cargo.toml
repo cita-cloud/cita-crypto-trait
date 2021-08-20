@@ -2,8 +2,9 @@
 name = "cita-crypto-trait"
 version = "0.1.0"
 authors = ["Rivtower Technologies <contact@rivtower.com>"]
+description = "A library library define cryptography interface"
 license = "Apache-2.0"
 edition = "2018"
 
 [dependencies]
-#cita-types = {git = "https://github.com/cita-cloud/cita-types" ,branch = "main" }
+#cita-types = "0.1"
