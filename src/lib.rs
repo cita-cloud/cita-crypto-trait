@@ -16,7 +16,7 @@ use cita_types::Address;
 
 pub trait Sign
 where
-    Self: ::std::marker::Sized,
+    Self: Sized,
 {
     type PrivKey;
     type PubKey;
@@ -32,7 +32,7 @@ where
     ) -> Result<bool, Self::Error>;
     fn verify_address(
         &self,
-        address: Address,
+        address: &Address,
         message: &Self::Message,
     ) -> Result<bool, Self::Error>;
 }
