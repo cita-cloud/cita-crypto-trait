@@ -1,10 +1,10 @@
 [package]
 name = "cita-crypto-trait"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["Rivtower Technologies <contact@rivtower.com>"]
 description = "A library library define cryptography interface"
 license = "Apache-2.0"
 edition = "2018"
 
 [dependencies]
-#cita-types = "0.1"
+cita-types = "0.1"

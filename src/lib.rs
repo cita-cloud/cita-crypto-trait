@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-//use cita_types::Address;
+use cita_types::Address;
 
 pub trait Sign
 where
@@ -22,7 +22,6 @@ where
     type PubKey;
     type Message;
     type Error;
-    type Address;
 
     fn sign(privkey: &Self::PrivKey, message: &Self::Message) -> Result<Self, Self::Error>;
     fn recover(&self, message: &Self::Message) -> Result<Self::PubKey, Self::Error>;
@@ -33,7 +32,7 @@ where
     ) -> Result<bool, Self::Error>;
     fn verify_address(
         &self,
-        address: &Self::Address,
+        address: Address,
         message: &Self::Message,
     ) -> Result<bool, Self::Error>;
 }
@@ -45,11 +44,10 @@ where
     type PrivKey;
     type PubKey;
     type Error;
-    type Address;
 
     fn from_privkey(privkey: Self::PrivKey) -> Result<Self, Self::Error>;
     fn gen_keypair() -> Self;
     fn privkey(&self) -> &Self::PrivKey;
     fn pubkey(&self) -> &Self::PubKey;
-    fn address(&self) -> Self::Address;
+    fn address(&self) -> Address;
 }
